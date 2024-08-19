@@ -1,5 +1,4 @@
 import React from 'react';
-import homeLogo from '../../assets/home.png';
 
 
 function Home() {

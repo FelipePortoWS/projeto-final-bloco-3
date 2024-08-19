@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Navbar() {
@@ -23,16 +23,14 @@ function Navbar() {
 */
 
   navbarComponent = (
-    <div className='w-full bg-gradient-to-r from-violet-700 to-pink-950 text-white flex justify-center py-4'>
+    <div className='w-full bg-gradient-to-r from-violet-700 to-pink-950 text-white flex justify-center py-6'>
       <div className="container flex justify-between text-lg">
         <div className='text-2xl font-bold font-serif italic'>Farmácia</div>
 
         <div className='flex gap-4'>
-          <div className='hover:underline'>Home</div>
-          <div className='hover:underline'>Produtos</div>
-          <div className='hover:underline'>Categorias</div>
-          <div className='hover:underline'>Adicionar ou modificar produtos</div>
-          <div className='hover:underline'>Adicionar ou modificar categorias</div>
+          <Link to='/Home' className='hover:underline'>Home</Link>
+          <Link to='/Produtos' className='hover:underline'>Produtos</Link>
+          <Link to='/Categorias' className='hover:underline'>Categorias</Link>
         </div>
       </div>
     </div>
