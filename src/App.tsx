@@ -10,7 +10,10 @@ import GetAllProduto from './components/produto/getallproduto/GetAllProduto';
 import PostPutProduto from "./components/produto/postputproduto/PostPutProduto";
 import DeleteProduto from "./components/produto/deleteproduto/DeleteProduto";
 import { toastAlerta } from './utils/toastAlerta';
+import "react-toastify/dist/ReactToastify.css";
 
+import PostCategoria from "./components/categoria/postcategoria/PostCategoria"
+import PostProduto from "./components/produto/postproduto/PostProduto"
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -28,10 +31,12 @@ function App() {
               <Route path="/home" element={<Home/>} />
               <Route path="/categorias" element={<GetAllCategoria/>} />
               <Route path="/postPutCategoria" element={<PostPutCategoria/>} />
-              <Route path="/deletarCategoria" element={<DeleteCategoria/>} />
+              <Route path="/deleteCategoria" element={<DeleteCategoria/>} />
               <Route path="/produtos" element={<GetAllProduto/>} />
               <Route path="/postPutProduto" element={<PostPutProduto/>} />
-              <Route path="/deletarProduto" element={<DeleteProduto/>} />
+              <Route path="/deleteProduto" element={<DeleteProduto/>} />
+              <Route path="/postCategoria" element={<PostCategoria/>} />
+              <Route path="/postProduto" element={<PostProduto/>} />
             </Routes>
           </div>
           <Footer/>

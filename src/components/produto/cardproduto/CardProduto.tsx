@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import produtoicon from '../../../assets/produtoicon.png'
 import { SelectionBackground } from '@phosphor-icons/react'
+import { useNavigate } from 'react-router-dom';
+
 
 function CardProduto() {
+
+  const navigate = useNavigate();
+
+  function editProduto(){
+    navigate("/PostPutProduto");
+  }
+
+  function deleteProduto(){
+    navigate("/deleteProduto");
+  }
+
   return (
     <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
       <div>
@@ -21,10 +34,10 @@ function CardProduto() {
       </div>
       <div className="flex">
       <div className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-          <button>Editar</button>
+          <button onClick={() => editProduto()} >Editar</button>
         </div>
         <div className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-          <button>Deletar</button>
+          <button onClick={() => deleteProduto()} >Deletar</button>
         </div>
       </div>
     </div>

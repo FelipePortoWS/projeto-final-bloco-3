@@ -2,7 +2,8 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toastAlerta } from '../../../utils/toastAlerta'
 
-function PostPutCategoria() {
+
+function PostCategoria() {
   const [id, setId] = useState('');
   const [descricao, setDescricao] = useState(''); 
   const navigate = useNavigate();
@@ -25,13 +26,14 @@ function PostPutCategoria() {
     }
 
     navigate('/categorias');
+
   };
 
   return (
     <div className="container flex flex-col items-center justify-center mx-auto">
       <form className="w-1/2 flex flex-col gap-4" onSubmit={handleSubmit}>
         <h1 className=' text-4xl text-center my-8' >
-          Atualizar Categoria
+          Cadastrar Categoria
         </h1>
 
         <div className="flex flex-col gap-2">
@@ -48,13 +50,12 @@ function PostPutCategoria() {
         
         <button
           className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
-          type="submit"
-          onSubmit={() => toastAlerta('Banco de dados atualizado', 'sucesso')}>
-          Atualizar
+          type="submit" onClick={() => { navigate('/categorias') ; toastAlerta('Banco de dados atualizado', 'sucesso')}}>
+          Cadastrar
         </button>
       </form>
     </div>
   );
 }
 
-export default PostPutCategoria;
+export default PostCategoria;
